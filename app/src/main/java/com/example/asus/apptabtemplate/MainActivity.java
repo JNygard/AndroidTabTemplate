@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
 
+    Toolbar toolbarDraw;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
         viewPagerAdapter.addFragments(new Fragment3(), "Fragment3");
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
+
+        toolbarDraw = (Toolbar) findViewById(R.id.toolbardrawer);
+        setSupportActionBar(toolbarDraw);
+
 
 
 

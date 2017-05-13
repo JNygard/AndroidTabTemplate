@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.v4.widget.DrawerLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +7,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.asus.apptabtemplate.MainActivity">
+
+
+
+
+
+
+
+
+
 
     <android.support.design.widget.AppBarLayout
         android:layout_height="wrap_content"
@@ -36,5 +45,26 @@
         >
     </android.support.v4.view.ViewPager>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            layout="@layout/toolbar_layout_drawer"
+            />
+    </LinearLayout>
 
-</RelativeLayout>
+    <android.support.design.widget.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/design_navigation_view"
+        android:layout_gravity="start"
+        app:menu="@menu/drawer_menu"
+        >
+
+    </android.support.design.widget.NavigationView>
+
+
+</android.support.v4.widget.DrawerLayout>
