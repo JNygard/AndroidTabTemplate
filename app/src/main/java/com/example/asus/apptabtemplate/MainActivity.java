@@ -1,10 +1,14 @@
 package com.example.asus.apptabtemplate;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.example.asus.apptabtemplate.Adapter.ViewPagerAdapter;
 import com.example.asus.apptabtemplate.Fragment.Fragment1;
@@ -18,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
 
-    Toolbar toolbarDraw;
+    //Toolbar toolbarDraw;
 
 
     @Override
@@ -26,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setUpNavigation();
+
+    }
+
+    public void setUpNavigation(){
         toolbar = (Toolbar) findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
 
@@ -38,11 +47,27 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
-        toolbarDraw = (Toolbar) findViewById(R.id.toolbardrawer);
-        setSupportActionBar(toolbarDraw);
-
-
-
+        //toolbarDraw = (Toolbar) findViewById(R.id.toolbardrawer);
+        //setSupportActionBar(toolbarDraw);
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_main,menu);
+
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int res_id = item.getItemId();
+        if(res_id==R.id.menu_settings) {
+            //Intent intent = new Intent(this, Settings.class);
+            //startActivity(intent);
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }
